@@ -1,11 +1,11 @@
 #!/bin/bash
 # This script looks at your following list and identify accounts with zero posts
 # and prints them account names along with when they joined.
+#!/bin/bash
 toot_count (){
 	USER=$1
-	VALUE=`toot whois $USER 2>/dev/null`
-	POSTS=`echo $VALUE | rg Statuses | cut -f2 -d":" | tr -d " "`
-	JOIN_DATE=`echo $VALUE | rg Since | cut -f2 -d":" | tr -d " "`
+	POSTS=`toot whois $USER 2>/dev/null | rg Statuses | cut -f2 -d":" | tr -d " "`
+	JOIN_DATE=`toot whois $USER 2>/dev/null| rg Since | cut -f2 -d":" | tr -d " "`
 	if [ $POSTS == "0" ]
 	then
 		echo "$USER,$JOIN_DATE"

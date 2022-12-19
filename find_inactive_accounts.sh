@@ -5,7 +5,7 @@
 toot_count (){
 	USER=$1
 	POSTS=`toot whois $USER 2>/dev/null | rg Statuses | cut -f2 -d":" | tr -d " "`
-	JOIN_DATE=`toot whois $USER 2>/dev/null| rg Since | cut -f2 -d":" | tr -d " "`
+	JOIN_DATE=`toot whois $USER 2>/dev/null| rg "^Since" | cut -f2 -d":" | tr -d " "`
 	if [ $POSTS == "0" ]
 	then
 		echo "$USER,$JOIN_DATE"

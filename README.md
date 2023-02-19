@@ -1,2 +1,4 @@
-# fediverse_stats_scripts
-Various scripts created for quick stats extraction from different fediverse accounts
+# Fediverse Scripts
+
+
+Scripts created for different usecases around Fediverse
